@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Nome:</b>
+  <%= @local_de_entrega.nome %>
+</p>
+
+<p>
+  <b>Endereco:</b>
+  <%= @local_de_entrega.endereco %>
+</p>
+
+<p>
+  <b>Referencia:</b>
+  <%= @local_de_entrega.referencia %>
+</p>
+
+
+<%= link_to 'Edit', edit_local_de_entrega_path(@local_de_entrega) %> |
+<%= link_to 'Back', local_de_entregas_path %>

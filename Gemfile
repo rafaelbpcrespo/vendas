@@ -6,7 +6,8 @@ gem 'mysql2'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
-
+gem 'bootstrap'
+gem 'awesome_nested_fields'
 gem 'sqlite3'
 
 gem "therubyracer"

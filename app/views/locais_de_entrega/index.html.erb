@@ -1,0 +1,27 @@
+<h1>Listing local_de_entregas</h1>
+
+<table>
+  <tr>
+    <th>Nome</th>
+    <th>Endereco</th>
+    <th>Referencia</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @local_de_entregas.each do |local_de_entrega| %>
+  <tr>
+    <td><%= local_de_entrega.nome %></td>
+    <td><%= local_de_entrega.endereco %></td>
+    <td><%= local_de_entrega.referencia %></td>
+    <td><%= link_to 'Show', local_de_entrega %></td>
+    <td><%= link_to 'Edit', edit_local_de_entrega_path(local_de_entrega) %></td>
+    <td><%= link_to 'Destroy', local_de_entrega, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Local de entrega', new_local_de_entrega_path %>

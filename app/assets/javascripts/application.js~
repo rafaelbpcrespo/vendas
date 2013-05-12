@@ -14,7 +14,3 @@
 //= require jquery_ujs
 //= require_tree .
 //= require jquery.nested-fields
-
-$(document).ready(function(e) {
-  $('FORM').nestedFields();
-});

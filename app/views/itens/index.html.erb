@@ -1,0 +1,31 @@
+<h1>Listing itens</h1>
+
+<table>
+  <tr>
+    <th>Tipo de produto</th>
+    <th>Produto</th>
+    <th>Valor</th>
+    <th>Quantitade produto</th>
+    <th>Observacoes</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @itens.each do |item| %>
+  <tr>
+    <td><%= item.tipo_de_produto_id %></td>
+    <td><%= item.produto_id %></td>
+    <td><%= item.valor %></td>
+    <td><%= item.quantitade_produto %></td>
+    <td><%= item.observacoes %></td>
+    <td><%= link_to 'Show', item %></td>
+    <td><%= link_to 'Edit', edit_item_path(item) %></td>
+    <td><%= link_to 'Destroy', item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Item', new_item_path %>

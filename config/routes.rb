@@ -1,4 +1,16 @@
 Vendas::Application.routes.draw do
+  resources :produtos
+
+  resources :itens
+
+  resources :pedidos
+
+  resources :local_de_entregas
+
+  resources :empresas
+
+  resources :clientes
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

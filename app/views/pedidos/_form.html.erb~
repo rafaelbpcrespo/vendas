@@ -1,0 +1,40 @@
+<%= form_for(@pedido) do |f| %>
+  <% if @pedido.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@pedido.errors.count, "error") %> prohibited this pedido from being saved:</h2>
+
+      <ul>
+      <% @pedido.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :valor_total %><br />
+    <%= f.text_field :valor_total %>
+  </div>
+  <div class="field">
+    <%= f.label :cliente_id %><br />
+    <%= f.collection_select :cliente_id, Cliente.all, :id, :nome, :prompt => "Selecione" %>
+  </div>
+  <div class="field">
+    <%= f.label :local_de_entrega %><br />
+    <%= f.collection_select :local_de_entrega_id, LocalDeEntrega.all, :id, :nome, :prompt => "Selecione" %>
+  </div>
+  <div class="field">
+		<fieldset id="contacts">
+		  <legend>Produtos</legend>
+		  <% f.fields_for :produtos do |produtos_form| -%>
+				<%= produtos_form.label :produtos %><br />
+				<%= produtos_form.collection_select :produtos, Produto.all, :id, :nome, :prompt => "Selecione" %>
+		    <%= render :partial => 'contact', :locals => { :f => contacts_form }  %>
+		  <% end -%>
+		</fieldset>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
